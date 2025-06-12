@@ -25,6 +25,13 @@ namespace WindowsKillLibrary {
 	/// </summary>
 	const DWORD SIGNAL_TYPE_CTRL_BREAK = CTRL_BREAK_EVENT;
 
+
+	/// <summary>
+	/// Signal type of Close console window same as Signal SIGTERM
+	/// </summary>
+	const DWORD SIGNAL_TYPE_CLOSE_EVENT = CTRL_CLOSE_EVENT;
+	
+
 	/// <summary>
 	/// Sends the signal.
 	/// </summary>

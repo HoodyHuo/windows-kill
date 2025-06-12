@@ -13,6 +13,7 @@ using std::exception;
 using WindowsKillLibrary::sendSignal;
 using WindowsKillLibrary::SIGNAL_TYPE_CTRL_C;
 using WindowsKillLibrary::SIGNAL_TYPE_CTRL_BREAK;
+using WindowsKillLibrary::SIGNAL_TYPE_CLOSE_EVENT;
 
 #define WINDOWSKILL_VERSION "1.1.4"
 
@@ -37,7 +38,8 @@ int main(int argc,char *argv[])
 		else if (strcmp(argv[1], "-l") == 0) {
 			cout << "Availabe Signal Types\n"
 				 << "\t(1) (SIGBREAK) : CTR + Break\n"
-				 << "\t(2) (SIGINT) : CTR + C\n" << endl;
+				 << "\t(2) (SIGINT) : CTR + C\n"
+				 << "\t(3) (SIGCLOSE) : click close button\n" << endl;
 		}
 		else {
 			cout << "Not enough argument. Use -h for help." << endl;
@@ -50,6 +52,9 @@ int main(int argc,char *argv[])
 		}
 		else if (strcmp(argv[1], "-2") == 0 || strcmp(argv[1], "-SIGINT") == 0) {
 			signal_type = SIGNAL_TYPE_CTRL_C;
+		}
+		else if (strcmp(argv[1], "-3") == 0 || strcmp(argv[1], "-SIGCLOSE") == 0) {
+			signal_type = SIGNAL_TYPE_CLOSE_EVENT;
 		}
 		else {
 			cout << "Signal type " << argv[1] << " not supported. Use -h for help." << endl;
