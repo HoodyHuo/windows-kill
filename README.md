@@ -11,7 +11,7 @@ Well, I'm a node.js developer. Node has a functionality that could send signals 
 
 ## Features
 - Support both **32bit** (Win32) & **64bit** (x64) Windows
-- Support both ```SIGBREAK``` (Ctrl + Break) and ```SIGINT``` (Ctrl + C) Signals
+- Support SIGBREAK (Ctrl + Break), SIGINT (Ctrl + C), and SIGCLOSE (click close button) Signals.
 - A library that could be used directly (#include), As a static library (.lib) and a dynamic library (.dll)
 - Prebuilt binaries and libraries
 
@@ -63,6 +63,14 @@ If signal sending was successful or any error occurred during the sending, appro
 ```
 ```bash
 > windows-kill -2 1234
+```
+
+#### Sending SIGCLOSE (click close button) to sample 1234 PID
+```bash
+> windows-kill -SIGCLOSE 1234
+```
+```bash
+> windows-kill -3 1234
 ```
 
 #### List supported signal types

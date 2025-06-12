@@ -24,7 +24,7 @@ namespace WindowsKillLibrary {
 	}
 
 	void Signal::validateType(DWORD_PTR type) {
-		if (!(type == CTRL_C_EVENT || type == CTRL_BREAK_EVENT)) {
+		if (!(type == CTRL_C_EVENT || type == CTRL_BREAK_EVENT || type == CTRL_CLOSE_EVENT)) {
 			throw invalid_argument(string("EINVAL"));
 		}
 	}
